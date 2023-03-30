@@ -19,8 +19,12 @@ const Home =() =>{
         <ScreenHeaderBtn iconUrl={icons.profile} dimension="100%"/>
       ),headerTitle:''}}/>
 
-      <ScrollView showsVerticalScrollIndicator={true}></ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}></ScrollView>
        <View style={{flex:1,padding:SIZES.medium}}/>
+       <Welcome/>
+       <Popularjobs/>
+       <Nearbyjobs/>
+       <View/>
       <ScrollView/>
 
     </SafeAreaView>
