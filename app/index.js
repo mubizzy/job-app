@@ -4,6 +4,7 @@ import { Stack, useRouter} from "expo-router";
 import{COLORS,icons,images,SIZES} from '../constants'
 import{Nearbyjobs,Popularjobs,ScreenHeaderBtn,Welcome} from "../components"
 import { SafeAreaView } from "react-native-safe-area-context";
+import { ScrollView } from "react-native-gesture-handler";
 const Home =() =>{
    const router=useRouter();
   return(
@@ -17,6 +18,10 @@ const Home =() =>{
       headerRight:()=>(
         <ScreenHeaderBtn iconUrl={icons.profile} dimension="100%"/>
       ),headerTitle:''}}/>
+
+      <ScrollView showsVerticalScrollIndicator={true}></ScrollView>
+       <View style={{flex:1,padding:SIZES.medium}}/>
+      <ScrollView/>
 
     </SafeAreaView>
   )
