@@ -12,6 +12,7 @@ import { useRouter } from "expo-router";
 import { COLORS, icons, SIZES } from "../../../constants";
 import styles from "./popularjobs.style";
 import { isLoading } from "expo-font";
+import PopularJobCard from "../../common/cards/popular/PopularJobCard";
 
 const Popularjobs = () => {
   const router = useRouter();
@@ -32,9 +33,10 @@ const Popularjobs = () => {
         ) : error ? (
           <Text>Something went wrong</Text>
         ) : (
-          <FlatList 
-          data={}
-          renderItem={({})=>(<PopularjobsCard/>)}/>
+          <FlatList
+            data={[1, 2, 3, 4, 6, 7]}
+            renderItem={({ item }) => <PopularJobCard item={item} />}
+          />
         )}
       </View>
     </View>
