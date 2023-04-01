@@ -11,6 +11,7 @@ import {
 import { useRouter } from "expo-router";
 import styles from "./welcome.style";
 import { icons, SIZES } from "../../../constants";
+import PopularJobCard from "../../common/cards/popular/PopularJobCard";
 
 const jobTypes = ["Full-time", "Part-time", "Contractor"];
 
