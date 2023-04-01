@@ -15,7 +15,8 @@ import { isLoading } from "expo-font";
 
 const Popularjobs = () => {
   const router = useRouter();
-  const isLoading=false;
+  const isLoading = false;
+  const error = false;
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -23,10 +24,18 @@ const Popularjobs = () => {
         <TouchableOpacity>
           <Text style={styles.headerBtn}>Show all</Text>
         </TouchableOpacity>
-      </View> 
+      </View>
 
       <View style={styles.cardsContainer}>
-        {isLoading?(<ActivityIndicator size="large" color={COLORS.primary}/>):(</>)}
+        {isLoading ? (
+          <ActivityIndicator size="large" color={COLORS.primary} />
+        ) : error ? (
+          <Text>Something went wrong</Text>
+        ) : (
+          <FlatList 
+          data={}
+          renderItem={({})=>(<PopularjobsCard/>)}/>
+        )}
       </View>
     </View>
   );
