@@ -19,7 +19,7 @@ const Popularjobs = () => {
   // const isLoading = false;
   // const error = false;
   const { data, isLoading, error } = useFetch("search", {
-    query: "React developer",
+    query: "Python developer in Texas, USA",
     num_pages: "1",
   });
   const [selectedJob, setSelectedJob] = useState();
