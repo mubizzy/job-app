@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axios, { Axios } from "axios";
+import axios from "axios";
 import { RAPID_API_KEY } from "@env";
 
 const rapidapikey = RAPID_API_KEY;
