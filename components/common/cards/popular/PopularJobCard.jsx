@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, Image } from "react-native";
 import { checkImageURL } from "../../../../utils";
 import styles from "./popularjobcard.style";
 
-const PopularJobCard = ({ item, selectedJob, handleCardPress }) => {
+const PopularJobCard = ({ item, selectedJob, handleCardPress, job }) => {
   return (
     <TouchableOpacity
       style={styles.container(selectedJob, item)}
@@ -23,7 +23,12 @@ const PopularJobCard = ({ item, selectedJob, handleCardPress }) => {
         {item.employer_name}
       </Text>
 
-      <View></View>
+      <View style={styles.infoContainer}>
+        <Text style={styles.jobName} numberOfLines={1}>
+          {job?.job_title}
+        </Text>
+        <Text style={styles.jobType}>{job?.job_employment_type}</Text>
+      </View>
     </TouchableOpacity>
   );
 };
