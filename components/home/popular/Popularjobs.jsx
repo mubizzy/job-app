@@ -11,19 +11,18 @@ import {
 import { useRouter } from "expo-router";
 import { COLORS, icons, SIZES } from "../../../constants";
 import styles from "./popularjobs.style";
-import { isLoading } from "expo-font";
+
 import PopularJobCard from "../../common/cards/popular/PopularJobCard";
 import useFetch from "../../../hook/useFetch";
 const Popularjobs = () => {
   const router = useRouter();
-  // const isLoading = false;
-  // const error = false;
+
   const { data, isLoading, error } = useFetch("search", {
     query: "Python developer ",
     num_pages: "1",
   });
 
-  console.log(data);
+  // console.log(data);
   const [selectedJob, setSelectedJob] = useState();
   const handleCardPress = (item) => {
     router.push(`/job-details/${item.job_id}`);
@@ -41,7 +40,7 @@ const Popularjobs = () => {
 
       <View style={styles.cardsContainer}>
         {isLoading ? (
-          <ActivityIndicator size="large" color={COLORS.primary} />
+          <ActivityIndicator size="small" color={COLORS.primary} />
         ) : error ? (
           <Text>Something went wrong</Text>
         ) : (
