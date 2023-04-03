@@ -19,9 +19,11 @@ const Popularjobs = () => {
   // const isLoading = false;
   // const error = false;
   const { data, isLoading, error } = useFetch("search", {
-    query: "Python developer in Texas, USA",
+    query: "Python developer ",
     num_pages: "1",
   });
+
+  console.log(data);
   const [selectedJob, setSelectedJob] = useState();
   return (
     <View style={styles.container}>
@@ -39,8 +41,10 @@ const Popularjobs = () => {
           <Text>Something went wrong</Text>
         ) : (
           <FlatList
-            data={[1, 2, 3, 4, 6, 7]}
-            renderItem={({ item }) => <PopularJobCard item={item} />}
+            data={{ data }}
+            renderItem={({ item }) => (
+              <PopularJobCard item={item} selectedJob={selectedJob} />
+            )}
             keyExtractor={(item) => item?.job_id}
             contentContainerStyle={{ columnGap: SIZES.medium }}
             horizontal
