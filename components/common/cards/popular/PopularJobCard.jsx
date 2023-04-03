@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
-// import { checkImageURL } from "../../../../utils";
+import { checkImageURL } from "../../../../utils";
 import styles from "./popularjobcard.style";
 
 const PopularJobCard = ({ item, selectedJob, handleCardPress }) => {
@@ -23,9 +23,7 @@ const PopularJobCard = ({ item, selectedJob, handleCardPress }) => {
         {item.employer_name}
       </Text>
 
-      <View>
-        <Text style={styles.companyName}></Text>
-      </View>
+      <View></View>
     </TouchableOpacity>
   );
 };
