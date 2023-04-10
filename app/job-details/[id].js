@@ -40,7 +40,7 @@ const jobDetails = () => {
           headerRight: () => (
             <ScreenHeaderBtn iconUrl={icons.share} dimension="60%" />
           ),
-          //   headerTitle: "",
+          headerTitle: "",
         }}
       />
     </SafeAreaView>
